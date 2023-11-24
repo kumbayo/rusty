@@ -1,23 +1,23 @@
 #include <math.h>
 #include <stdio.h>
 
-typedef struct LOG_interface {
+typedef struct MYLOG_interface {
     int x;
-} LOG_interface;
+} MYLOG_interface;
 
-typedef struct PRINT_interface {
+typedef struct MYPRINTF_interface {
     char text[81];
     int value;
-} PRINT_interface;
+} MYPRINTF_interface;
 
-int LOG(LOG_interface* param) {
+int MYLOG(MYLOG_interface* param) {
     printf("Calling log with %d\n", param->x);
     int res =  (int) log10(param->x);
     printf("result :  %d\n", res);
     return res;
 }
 
-int PRINTF(PRINT_interface* param) {
+int MYPRINTF(MYPRINTF_interface* param) {
     return printf(param->text, param->value);
 }
 
