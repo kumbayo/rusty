@@ -10,6 +10,7 @@
         {
             "name" : "iec61131std",
             "path" : "",
+            "package" : "Copy",
             "include_path" : [
                 "examples/hw.st"
             ]
@@ -17,6 +18,7 @@
         {
             "name" : "other_iec61131std",
             "path" : "examples/hw.st",
+            "package" : "Copy",
             "include_path" : [
                 "examples/hello_world.st"
             ]
