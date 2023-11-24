@@ -44,7 +44,7 @@ pub trait SourceContainer {
         }
     }
 
-    /// Returns a staticly available location for this source
+    /// Returns a statically available location for this source
     fn get_location_str(&self) -> &'static str {
         let s = self
             .get_location()

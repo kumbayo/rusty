@@ -106,7 +106,7 @@ pub extern "C" fn TP(timer: &mut TimerParams) {
 #[no_mangle]
 pub extern "C" fn TON(timer: &mut TimerParams) {
     let output = if timer.input {
-        //Timer was strarted at some point
+        //Timer was started at some point
         if timer.is_running() {
             //Timer is still running
             timer.update_elapsed_time();

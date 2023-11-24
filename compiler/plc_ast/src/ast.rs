@@ -248,7 +248,7 @@ impl Display for PouType {
 }
 
 impl PouType {
-    /// returns Some(owner_class) if this is a `Method` or otherwhise `None`
+    /// returns Some(owner_class) if this is a `Method` or otherwise `None`
     pub fn get_optional_owner_class(&self) -> Option<String> {
         if let PouType::Method { owner_class } = self {
             Some(owner_class.clone())

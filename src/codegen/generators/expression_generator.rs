@@ -450,7 +450,7 @@ impl<'ink, 'b> ExpressionCodeGenerator<'ink, 'b> {
                 )
             })?;
 
-        // generate the debug statetment for a call
+        // generate the debug statement for a call
         self.register_debug_location(operator);
 
         // if this is a function that returns an aggregate type we need to allocate an out.pointer

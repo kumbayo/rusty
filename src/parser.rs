@@ -854,8 +854,8 @@ fn parse_array_type_definition(
         Some(range_statement)
     })?;
 
-    let inner_type_defintion = parse_data_type_definition(lexer, None);
-    inner_type_defintion.map(|(reference, initializer)| {
+    let inner_type_definition = parse_data_type_definition(lexer, None);
+    inner_type_definition.map(|(reference, initializer)| {
         let reference_end = reference.get_location().to_range().map(|it| it.end).unwrap_or(0);
         let location = lexer.source_range_factory.create_range(start..reference_end);
 
@@ -1094,7 +1094,7 @@ fn parse_hardware_access(
 ) -> Result<AstNode, Diagnostic> {
     let start_location = lexer.last_location();
     lexer.advance();
-    //Folowed by an integer
+    //Followed by an integer
     if access_type == DirectAccessType::Template || lexer.token == LiteralInteger {
         let mut address = vec![];
         if lexer.token == LiteralInteger {

@@ -34,7 +34,7 @@ fn multiple_source_files_generated() {
     //When the are generated
     let results = compile_with_root(vec![src1, src2], vec![], "root", DebugLevel::None).unwrap();
     assert_eq!(results.len(), 2);
-    //The datatypes do not conflics
+    //The datatypes do not conflict
     //The functions are defined correctly
     insta::assert_snapshot!(results.join("\n"));
 }
@@ -71,7 +71,7 @@ fn multiple_files_with_debug_info() {
     //When the are generated
     let results = compile_with_root(vec![src1, src2], vec![], "root", DebugLevel::Full).unwrap();
     assert_eq!(results.len(), 2);
-    //The datatypes do not conflics
+    //The datatypes do not conflict
     //The functions are defined correctly
     insta::assert_snapshot!(results.join("\n"));
 }
@@ -108,7 +108,7 @@ fn multiple_files_in_different_locations_with_debug_info() {
     //When the are generated
     let results = compile_with_root(vec![src1, src2], vec![], "root", DebugLevel::Full).unwrap();
     assert_eq!(results.len(), 2);
-    //The datatypes do not conflics
+    //The datatypes do not conflict
     //The functions are defined correctly
     insta::assert_snapshot!(results.join("\n"));
 }

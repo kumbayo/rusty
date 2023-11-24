@@ -60,9 +60,9 @@ pub struct VariableIndexEntry {
     is_constant: bool,
     /// the variable's datatype
     pub data_type_name: String,
-    /// the index of the member-variable in it's container (e.g. struct). defautls to 0 (Single variables)
+    /// the index of the member-variable in it's container (e.g. struct). defaults to 0 (Single variables)
     location_in_parent: u32,
-    /// Wether the variable is externally or internally available
+    /// Whether the variable is externally or internally available
     linkage: LinkageType,
     /// A binding to a hardware or external location
     binding: Option<HardwareBinding>,
@@ -732,7 +732,7 @@ impl PouIndexEntry {
 }
 
 /// the TypeIndex carries all types.
-/// it is extracted into its seaprate struct so it can be
+/// it is extracted into its separate struct so it can be
 /// internally borrowed individually from the other maps
 #[derive(Debug)]
 pub struct TypeIndex {
@@ -888,7 +888,7 @@ impl Index {
                                     self.import_type_size(&mut other.constant_expressions, &d.end_offset);
                             }
                         }
-                        // import constant expressions in String-size defintions
+                        // import constant expressions in String-size definitions
                         DataTypeInformation::String { size, .. } => {
                             *size = self.import_type_size(&mut other.constant_expressions, size);
                         }
@@ -1091,7 +1091,7 @@ impl Index {
     pub fn find_fully_qualified_variable(&self, fully_qualified_name: &str) -> Option<&VariableIndexEntry> {
         let segments: Vec<&str> = fully_qualified_name.split('.').collect();
         let (q, segments) = if segments.len() > 1 {
-            // the last segment is th ename, everything before ist qualifier
+            // the last segment is the name, everything before ist qualifier
             // e.g. MyClass.MyMethod.x --> qualifier: "MyClass.MyMethod", name: "x"
             (Some(segments.iter().take(segments.len() - 1).join(".")), vec![*segments.last().unwrap()])
         } else {
@@ -1259,7 +1259,7 @@ impl Index {
         }
     }
 
-    /// Returns the initioal value registered for the given data_type.
+    /// Returns the initial value registered for the given data_type.
     /// If the given dataType has no initial value AND it is an Alias or SubRange (referencing another type)
     /// this method tries to obtain the default value from the referenced type.
     pub fn get_initial_value_for_type(&self, type_name: &str) -> Option<&AstNode> {
