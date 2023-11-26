@@ -74,14 +74,14 @@ impl Serialize for HardwareConfiguration<'_> {
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct HardwareBinding<'idx> {
-    qualifed_name: ExpressionPath<'idx>,
+    qualified_name: ExpressionPath<'idx>,
     direction: HardwareAccessType,
     access_type: DirectAccessType,
     address: Vec<String>,
 }
 impl<'idx> HardwareBinding<'idx> {
     fn expand(&self, index: &'idx Index) -> Vec<ExpandedHardwareBinding> {
-        let names = self.qualifed_name.expand(index);
+        let names = self.qualified_name.expand(index);
         names
             .iter()
             .map(|it| ExpandedHardwareBinding {
@@ -133,7 +133,7 @@ pub fn collect_hardware_configuration(index: &Index) -> Result<HardwareConfigura
                 .map(|it| it.map(|it| it.to_string()))
                 .collect::<Result<Vec<String>, String>>()
                 .map(|address| HardwareBinding {
-                    qualifed_name: name,
+                    qualified_name: name,
                     access_type: binding.access,
                     address,
                     direction: binding.direction,

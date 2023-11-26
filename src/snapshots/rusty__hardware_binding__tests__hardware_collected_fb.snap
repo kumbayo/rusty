@@ -4,7 +4,7 @@ expression: config
 ---
 [
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "gFb",
@@ -19,7 +19,7 @@ expression: config
         address: [],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "gFb",
@@ -37,7 +37,7 @@ expression: config
         ],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "gFb",
@@ -55,7 +55,7 @@ expression: config
         ],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "gFb",
@@ -70,7 +70,7 @@ expression: config
         address: [],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "gFb",
@@ -85,7 +85,7 @@ expression: config
         address: [],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "gFb",
@@ -102,7 +102,7 @@ expression: config
         ],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "gFb",
@@ -120,7 +120,7 @@ expression: config
         ],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "aFb",
@@ -153,7 +153,7 @@ expression: config
         address: [],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "aFb",
@@ -189,7 +189,7 @@ expression: config
         ],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "aFb",
@@ -225,7 +225,7 @@ expression: config
         ],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "aFb",
@@ -258,7 +258,7 @@ expression: config
         address: [],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "aFb",
@@ -291,7 +291,7 @@ expression: config
         address: [],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "aFb",
@@ -326,7 +326,7 @@ expression: config
         ],
     },
     HardwareBinding {
-        qualifed_name: ExpressionPath {
+        qualified_name: ExpressionPath {
             names: [
                 Name(
                     "aFb",
