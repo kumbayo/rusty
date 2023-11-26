@@ -574,8 +574,9 @@ fn parse_full_data_type_definition(
     lexer: &mut ParseSession,
     name: Option<String>,
 ) -> Option<DataTypeWithInitializer> {
-    let end_keyword = if lexer.token == KeywordStruct { KeywordEndStruct } else { KeywordSemicolon };
-    parse_any_in_region(lexer, vec![end_keyword], |lexer| {
+    let is_struct = lexer.token == KeywordStruct;
+    let end_keyword = if is_struct { KeywordEndStruct } else { KeywordSemicolon };
+    let ret = parse_any_in_region(lexer, vec![end_keyword], |lexer| {
         let sized = lexer.try_consume(&PropertySized);
         if lexer.try_consume(&KeywordDotDotDot) {
             Some((
@@ -602,7 +603,12 @@ fn parse_full_data_type_definition(
                 }
             })
         }
-    })
+    });
+    // Consume any left over semicolons after END_STRUCT
+    if is_struct {
+        lexer.try_consume(&KeywordSemicolon);
+    }
+    ret
 }
 
 // TYPE xxx : 'STRUCT' | '(' | IDENTIFIER

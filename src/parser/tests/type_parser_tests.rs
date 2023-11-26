@@ -22,6 +22,23 @@ fn multi_type_declaration() {
 }
 
 #[test]
+fn multi_type_declaration_semicolon() {
+    let (result, ..) = parse(
+        r#"
+        TYPE
+            Point2D : STRUCT
+                x,y : INT;
+            END_STRUCT;
+            Point3D : STRUCT
+                x,y,z : INT;
+            END_STRUCT;
+        END_TYPE
+        "#,
+    );
+    insta::assert_debug_snapshot!(result);
+}
+
+#[test]
 fn simple_struct_type_can_be_parsed() {
     let (result, ..) = parse(
         r#"
