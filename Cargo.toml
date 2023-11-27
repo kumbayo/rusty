@@ -39,6 +39,7 @@ log.workspace = true
 inkwell.workspace = true
 chrono.workspace = true
 itertools.workspace = true
+cfg-if = "1.0.0"
 
 [dev-dependencies]
 num = "0.4"

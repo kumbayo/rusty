@@ -212,19 +212,21 @@ impl<'ink> CodeGen<'ink> {
         self.debug.finalize();
         log::debug!("{}", self.module.to_string());
 
-        #[cfg(feature = "verify")]
-        {
-            self.module
-                .verify()
-                .map_err(|it| Diagnostic::GeneralError {
-                    message: it.to_string(),
-                    err_no: plc_diagnostics::errno::ErrNo::codegen__general,
-                })
-                .map(|_| GeneratedModule { module: self.module, engine: RefCell::new(None) })
-        }
 
-        #[cfg(not(feature = "verify"))]
-        Ok(GeneratedModule { module: self.module, engine: RefCell::new(None) })
+        cfg_if::cfg_if! {
+            if #[cfg(feature = "verify")]
+            {
+                self.module
+                    .verify()
+                    .map_err(|it| Diagnostic::GeneralError {
+                        message: it.to_string(),
+                        err_no: plc_diagnostics::errno::ErrNo::codegen__general,
+                    })
+                    .map(|_| GeneratedModule { module: self.module, engine: RefCell::new(None) })
+            } else {
+                Ok(GeneratedModule { module: self.module, engine: RefCell::new(None) })
+            }
+        }
     }
 }
 

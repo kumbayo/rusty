@@ -2272,6 +2272,7 @@ dependencies = [
 name = "rusty"
 version = "0.2.0"
 dependencies = [
+ "cfg-if",
  "chrono",
  "clap 3.2.25",
  "encoding_rs",
