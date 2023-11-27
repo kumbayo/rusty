@@ -13,7 +13,6 @@ mod multifile_codegen_tests;
 mod parameters_tests;
 mod statement_codegen_test;
 mod string_tests;
-#[cfg(feature = "verify")]
 mod switch_case_tests;
 mod typesystem_test;
 mod vla_tests;

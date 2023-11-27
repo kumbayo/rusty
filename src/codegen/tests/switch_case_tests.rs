@@ -22,6 +22,7 @@ For non const variable references we need our own validation tests -> statement_
 */
 
 #[test]
+#[cfg_attr(not(feature = "verify"), ignore)]
 fn switch_case_duplicate_integer_literal_integer() {
     let result = codegen_without_unwrap(
         r#"
@@ -49,6 +50,7 @@ fn switch_case_duplicate_integer_literal_integer() {
 }
 
 #[test]
+#[cfg_attr(not(feature = "verify"), ignore)]
 fn switch_case_duplicate_integer_literal_integer_and_const() {
     let result = codegen_without_unwrap(
         r#"
@@ -80,6 +82,7 @@ fn switch_case_duplicate_integer_literal_integer_and_const() {
 }
 
 #[test]
+#[cfg_attr(not(feature = "verify"), ignore)]
 fn switch_case_duplicate_integer_literal_integer_and_binary_expression() {
     let result = codegen_without_unwrap(
         r#"
@@ -107,6 +110,7 @@ fn switch_case_duplicate_integer_literal_integer_and_binary_expression() {
 }
 
 #[test]
+#[cfg_attr(not(feature = "verify"), ignore)]
 fn switch_case_duplicate_integer_const() {
     let result = codegen_without_unwrap(
         r#"
@@ -140,6 +144,7 @@ fn switch_case_duplicate_integer_const() {
 }
 
 #[test]
+#[cfg_attr(not(feature = "verify"), ignore)]
 fn switch_case_duplicate_integer_const_and_binary_expression() {
     let result = codegen_without_unwrap(
         r#"
@@ -171,6 +176,7 @@ fn switch_case_duplicate_integer_const_and_binary_expression() {
 }
 
 #[test]
+#[cfg_attr(not(feature = "verify"), ignore)]
 fn switch_case_duplicate_integer_binary_expression() {
     let result = codegen_without_unwrap(
         r#"
