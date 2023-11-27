@@ -218,9 +218,9 @@ impl<'ink> CodeGen<'ink> {
                 .verify()
                 .map_err(|it| Diagnostic::GeneralError {
                     message: it.to_string(),
-                    err_no: crate::diagnostics::ErrNo::codegen__general,
+                    err_no: plc_diagnostics::errno::ErrNo::codegen__general,
                 })
-                .map(|_| GeneratedModule { module: self.module, debug: self.debug })
+                .map(|_| GeneratedModule { module: self.module, engine: RefCell::new(None) })
         }
 
         #[cfg(not(feature = "verify"))]
