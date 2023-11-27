@@ -1,4 +1,4 @@
-use crate::{diagnostics::Diagnostic, test_utils::tests::codegen_without_unwrap};
+use crate::{test_utils::tests::codegen_without_unwrap};
 use pretty_assertions::assert_eq;
 
 /*
@@ -40,10 +40,7 @@ fn switch_case_duplicate_integer_literal_integer() {
     );
     if let Err(msg) = result {
         assert_eq!(
-            Diagnostic::GeneralError {
-                message: "Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n".into(),
-                err_no: crate::diagnostics::ErrNo::codegen__general,
-            },
+            "error: Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n\n\n".to_string(),
             msg
         )
     } else {
@@ -74,10 +71,7 @@ fn switch_case_duplicate_integer_literal_integer_and_const() {
     );
     if let Err(msg) = result {
         assert_eq!(
-            Diagnostic::GeneralError {
-                message: "Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n".into(),
-                err_no: crate::diagnostics::ErrNo::codegen__general,
-            },
+            "error: Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n\n\n".to_string(),
             msg
         )
     } else {
@@ -104,10 +98,7 @@ fn switch_case_duplicate_integer_literal_integer_and_binary_expression() {
     );
     if let Err(msg) = result {
         assert_eq!(
-            Diagnostic::GeneralError {
-                message: "Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n".into(),
-                err_no: crate::diagnostics::ErrNo::codegen__general,
-            },
+            "error: Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n\n\n".to_string(),
             msg
         )
     } else {
@@ -140,10 +131,7 @@ fn switch_case_duplicate_integer_const() {
     );
     if let Err(msg) = result {
         assert_eq!(
-            Diagnostic::GeneralError {
-                message: "Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n".into(),
-                err_no: crate::diagnostics::ErrNo::codegen__general,
-            },
+            "error: Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n\n\n".to_string(),
             msg
         )
     } else {
@@ -174,10 +162,7 @@ fn switch_case_duplicate_integer_const_and_binary_expression() {
     );
     if let Err(msg) = result {
         assert_eq!(
-            Diagnostic::GeneralError {
-                message: "Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n".into(),
-                err_no: crate::diagnostics::ErrNo::codegen__general,
-            },
+            "error: Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n\n\n".to_string(),
             msg
         )
     } else {
@@ -204,10 +189,7 @@ fn switch_case_duplicate_integer_binary_expression() {
     );
     if let Err(msg) = result {
         assert_eq!(
-            Diagnostic::GeneralError {
-                message: "Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n".into(),
-                err_no: crate::diagnostics::ErrNo::codegen__general,
-            },
+            "error: Duplicate integer as switch case\n  switch i32 %load_input, label %else [\n    i32 2, label %case\n    i32 2, label %case1\n  ]\ni32 2\n\n\n".to_string(),
             msg
         )
     } else {
