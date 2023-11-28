@@ -23,6 +23,8 @@ impl Reporter for GitReporter {
 
         let mut file = fs::File::options().create(true).append(true).open(filename)?;
         writeln!(file, "{}", serde_json::to_string(&report)?)?;
+        // Drop the file to make sure the data was written
+        drop(file);
 
         cmd!(sh, "git add {filename}").run()?;
         cmd!(sh, "git commit -m {message}").run()?;
